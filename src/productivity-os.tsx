@@ -375,7 +375,7 @@ const HistoryTab = ({
           <Flag className="w-4 h-4" /> 10-Week Allocated Roadmap
         </h2>
         <div className="space-y-3 max-h-[350px] overflow-y-auto custom-scrollbar pr-2">
-          {priorities.map((p: Priority, index: number) => (
+          {priorities.map((p: Priority) => (
             <div
               key={p.id}
               className={`flex items-start gap-3 p-3 rounded-lg border transition-colors ${
@@ -795,7 +795,7 @@ export default function ProductivityOS() {
   const [sundayBacklog, setSundayBacklog] = useState<string[]>([]);
   const [priorities, setPriorities] = useState<Priority[]>(INITIAL_PRIORITIES);
 
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<>(null);
 
   useEffect(() => {
     setTodayTheme(WEEK_THEMES[new Date().getDay()]);
