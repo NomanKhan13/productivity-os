@@ -795,7 +795,7 @@ export default function ProductivityOS() {
   const [sundayBacklog, setSundayBacklog] = useState<string[]>([]);
   const [priorities, setPriorities] = useState<Priority[]>(INITIAL_PRIORITIES);
 
-  const timerRef = useRef<>(null);
+  const timerRef = useRef<number | null>(null);
 
   useEffect(() => {
     setTodayTheme(WEEK_THEMES[new Date().getDay()]);
